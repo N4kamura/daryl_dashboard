@@ -11,7 +11,7 @@ const DEFAULT_DATA = {
     "cargo": "Ingeniero Civil - CIP N° 352085 | Modelador Senior de Tráfico y Peatones | Ingeniero de ITS",
     "fechaInicioGeneral": "2026-11-16",
     "fechaFinGeneral": "2027-01-26",
-    "ultimaActualizacion": "2026-11-25T17:30:00"
+    "ultimaActualizacion": "2026-11-25T23:29:01.559Z"
   },
   "areas": [
     {
@@ -31,8 +31,26 @@ const DEFAULT_DATA = {
           "pesoEnArea": 10,
           "porcentajeManual": 100,
           "subtareas": [
-            { "id": "1.1.1", "nombre": "Revisión de planos geométricos", "descripcion": "Análisis de ejes viales e intersecciones críticas", "unidad": "planos", "meta": 12, "ejecutado": 12, "peso": 50, "porcentaje": 100 },
-            { "id": "1.1.2", "nombre": "Identificación de incongruencias iniciales", "descripcion": "Detección de interferencias preliminares", "unidad": "%", "meta": 100, "ejecutado": 100, "peso": 50, "porcentaje": 100 }
+            {
+              "id": "1.1.1",
+              "nombre": "Revisión de planos geométricos",
+              "descripcion": "Análisis de ejes viales e intersecciones críticas",
+              "unidad": "planos",
+              "meta": 1,
+              "ejecutado": 1,
+              "peso": 50,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.1.2",
+              "nombre": "Identificación de incongruencias iniciales",
+              "descripcion": "Detección de interferencias preliminares",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 50,
+              "porcentaje": 100
+            }
           ]
         },
         {
@@ -45,8 +63,26 @@ const DEFAULT_DATA = {
           "pesoEnArea": 25,
           "porcentajeManual": 100,
           "subtareas": [
-            { "id": "1.2.1", "nombre": "Catastro y ubicación de intersecciones semaforizadas", "descripcion": "Definición de puntos de control semafórico", "unidad": "intersecciones", "meta": 15, "ejecutado": 15, "peso": 60, "porcentaje": 100 },
-            { "id": "1.2.2", "nombre": "Cuadro preliminar de equipos y cabezales", "descripcion": "Estimación de postes, ménsulas y caras de semáforos", "unidad": "%", "meta": 100, "ejecutado": 100, "peso": 40, "porcentaje": 100 }
+            {
+              "id": "1.2.1",
+              "nombre": "Catastro y ubicación de intersecciones semaforizadas",
+              "descripcion": "Definición de puntos de control semafórico",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 60,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.2.2",
+              "nombre": "Cuadro preliminar de equipos y cabezales",
+              "descripcion": "Estimación de postes, ménsulas y caras de semáforos",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 40,
+              "porcentaje": 100
+            }
           ]
         },
         {
@@ -59,8 +95,26 @@ const DEFAULT_DATA = {
           "pesoEnArea": 15,
           "porcentajeManual": 80,
           "subtareas": [
-            { "id": "1.3.1", "nombre": "Consolidación de matrices de giro", "descripcion": "Revisión de consistencia horaria en horas punta", "unidad": "estaciones", "meta": 10, "ejecutado": 8, "peso": 70, "porcentaje": 80 },
-            { "id": "1.3.2", "nombre": "Verificación de factores de hora pico (FHP)", "descripcion": "Cálculo de flujos equivalentes", "unidad": "%", "meta": 100, "ejecutado": 80, "peso": 30, "porcentaje": 80 }
+            {
+              "id": "1.3.1",
+              "nombre": "Consolidación de matrices de giro",
+              "descripcion": "Revisión de consistencia horaria en horas punta",
+              "unidad": "intersecciones",
+              "meta": 15,
+              "ejecutado": 15,
+              "peso": 70,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.3.2",
+              "nombre": "Cálculo de flujos por giro",
+              "descripcion": "Cálculo de flujos equivalentes y NEMA",
+              "unidad": "intersecciones",
+              "meta": 15,
+              "ejecutado": 15,
+              "peso": 30,
+              "porcentaje": 100
+            }
           ]
         },
         {
@@ -72,7 +126,18 @@ const DEFAULT_DATA = {
           "fechaFin": "2026-11-26",
           "pesoEnArea": 10,
           "porcentajeManual": 70,
-          "subtareas": []
+          "subtareas": [
+            {
+              "id": "1.4.1",
+              "nombre": "Superposición de interferencias de equipamiento semafórico",
+              "descripcion": "Compatiblización de ubicación de equipamiento con las interferencias",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 100,
+              "porcentaje": 100
+            }
+          ]
         },
         {
           "id": "1.5",
@@ -83,7 +148,28 @@ const DEFAULT_DATA = {
           "fechaFin": "2026-11-26",
           "pesoEnArea": 10,
           "porcentajeManual": 50,
-          "subtareas": []
+          "subtareas": [
+            {
+              "id": "1.5.1",
+              "nombre": "Reubicación de equipamiento semafórico",
+              "descripcion": "Reubicación de equipamiento por interferencias",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 70,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.5.2",
+              "nombre": "Dibujado de vistas de corte de interferencias y canalizaciones",
+              "descripcion": "Dibujado de cortes de las canalizaciones y cajas de paso con respecto a las interferencias encontradas",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 30,
+              "porcentaje": 0
+            }
+          ]
         },
         {
           "id": "1.6",
@@ -95,9 +181,46 @@ const DEFAULT_DATA = {
           "pesoEnArea": 30,
           "porcentajeManual": 0,
           "subtareas": [
-            { "id": "1.6.1", "nombre": "Cálculo de despejes y verdes peatonales", "descripcion": "Norma NEMA y manual de semaforización", "unidad": "intersecciones", "meta": 15, "ejecutado": 0, "peso": 30, "porcentaje": 0 },
-            { "id": "1.6.2", "nombre": "Lógica de prioridad para transporte público (BRT)", "descripcion": "Fases y ventanas de prioridad", "unidad": "%", "meta": 100, "ejecutado": 0, "peso": 35, "porcentaje": 0 },
-            { "id": "1.6.3", "nombre": "Programación de lógica actuada NEMA", "descripcion": "Estructura de anillos y barreras para controladores", "unidad": "%", "meta": 100, "ejecutado": 0, "peso": 35, "porcentaje": 0 }
+            {
+              "id": "1.6.1",
+              "nombre": "Cálculo de despejes y verdes peatonales",
+              "descripcion": "Norma NEMA y manual de semaforización",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 20,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.3",
+              "nombre": "Programación de lógica actuada NEMA",
+              "descripcion": "Estructura de anillos y barreras para controladores",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 50,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.3",
+              "nombre": "Programación de Prioridad Semafórica",
+              "descripcion": "Programación del Transit Signal Priority por cada estación",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 20,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.4",
+              "nombre": "Organización de conteos al estilo NEMA",
+              "descripcion": "Transformación de conteos de campo en conteos al estilo NEMA (giros divididos en izquierda, recto y derecha por sentido).",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 10,
+              "porcentaje": 100
+            }
           ]
         }
       ]
@@ -109,11 +232,61 @@ const DEFAULT_DATA = {
       "fechaInicio": "2026-12-09",
       "fechaFin": "2027-01-14",
       "tareas": [
-        { "id": "2.1", "nombre": "Definición de Arquitectura de ITS", "descripcion": "Definición de servicios ITS según ARC-IT.", "duracionDias": 2, "fechaInicio": "2026-12-09", "fechaFin": "2026-12-11", "pesoEnArea": 15, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "2.2", "nombre": "Exploración de Soluciones", "descripcion": "Rondas de RFI y RFQ para soluciones tecnológicas.", "duracionDias": 10, "fechaInicio": "2026-12-10", "fechaFin": "2026-12-24", "pesoEnArea": 25, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "2.3", "nombre": "Elaboración del Concepto de Operaciones (ConOps)", "descripcion": "Definición de funcionamiento operativo e interacciones.", "duracionDias": 2, "fechaInicio": "2026-12-10", "fechaFin": "2026-12-14", "pesoEnArea": 15, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "2.4", "nombre": "Definición de los Requisitos de los Sistemas", "descripcion": "Requisitos funcionales y técnicos para adquisición e integración.", "duracionDias": 3, "fechaInicio": "2026-12-22", "fechaFin": "2026-12-25", "pesoEnArea": 15, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "2.5", "nombre": "Diseño a detalle de ITS", "descripcion": "Ingeniería de detalle: infraestructura civil, canalizaciones, energía y coms.", "duracionDias": 15, "fechaInicio": "2026-12-24", "fechaFin": "2027-01-14", "pesoEnArea": 30, "porcentajeManual": 0, "subtareas": [] }
+        {
+          "id": "2.1",
+          "nombre": "Definición de Arquitectura de ITS",
+          "descripcion": "Definición de servicios ITS según ARC-IT.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-12-09",
+          "fechaFin": "2026-12-11",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.2",
+          "nombre": "Exploración de Soluciones",
+          "descripcion": "Rondas de RFI y RFQ para soluciones tecnológicas.",
+          "duracionDias": 10,
+          "fechaInicio": "2026-12-10",
+          "fechaFin": "2026-12-24",
+          "pesoEnArea": 25,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.3",
+          "nombre": "Elaboración del Concepto de Operaciones (ConOps)",
+          "descripcion": "Definición de funcionamiento operativo e interacciones.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-12-10",
+          "fechaFin": "2026-12-14",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.4",
+          "nombre": "Definición de los Requisitos de los Sistemas",
+          "descripcion": "Requisitos funcionales y técnicos para adquisición e integración.",
+          "duracionDias": 3,
+          "fechaInicio": "2026-12-22",
+          "fechaFin": "2026-12-25",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.5",
+          "nombre": "Diseño a detalle de ITS",
+          "descripcion": "Ingeniería de detalle: infraestructura civil, canalizaciones, energía y coms.",
+          "duracionDias": 15,
+          "fechaInicio": "2026-12-24",
+          "fechaFin": "2027-01-14",
+          "pesoEnArea": 30,
+          "porcentajeManual": 0,
+          "subtareas": []
+        }
       ]
     },
     {
@@ -123,11 +296,61 @@ const DEFAULT_DATA = {
       "fechaInicio": "2026-12-09",
       "fechaFin": "2027-01-26",
       "tareas": [
-        { "id": "3.1", "nombre": "Escenario Base", "descripcion": "Modelación, calibración y validación del estado actual.", "duracionDias": 16, "fechaInicio": "2026-12-09", "fechaFin": "2026-12-31", "pesoEnArea": 35, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "3.2", "nombre": "Escenario Propuesto", "descripcion": "Modelación de mejoras geométricas y operacionales.", "duracionDias": 15, "fechaInicio": "2026-12-31", "fechaFin": "2027-01-21", "pesoEnArea": 35, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "3.3", "nombre": "Resultados de simulaciones", "descripcion": "Extracción de demoras, colas y niveles de servicio.", "duracionDias": 1, "fechaInicio": "2027-01-21", "fechaFin": "2027-01-22", "pesoEnArea": 10, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "3.4", "nombre": "Videos de simulaciones", "descripcion": "Generación de renderizados y animaciones de tráfico.", "duracionDias": 1.2, "fechaInicio": "2027-01-22", "fechaFin": "2027-01-25", "pesoEnArea": 10, "porcentajeManual": 0, "subtareas": [] },
-        { "id": "3.5", "nombre": "Informe de simulación", "descripcion": "Compilación del informe técnico final.", "duracionDias": 2, "fechaInicio": "2027-01-22", "fechaFin": "2027-01-26", "pesoEnArea": 10, "porcentajeManual": 0, "subtareas": [] }
+        {
+          "id": "3.1",
+          "nombre": "Escenario Base",
+          "descripcion": "Modelación, calibración y validación del estado actual.",
+          "duracionDias": 16,
+          "fechaInicio": "2026-12-09",
+          "fechaFin": "2026-12-31",
+          "pesoEnArea": 35,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.2",
+          "nombre": "Escenario Propuesto",
+          "descripcion": "Modelación de mejoras geométricas y operacionales.",
+          "duracionDias": 15,
+          "fechaInicio": "2026-12-31",
+          "fechaFin": "2027-01-21",
+          "pesoEnArea": 35,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.3",
+          "nombre": "Resultados de simulaciones",
+          "descripcion": "Extracción de demoras, colas y niveles de servicio.",
+          "duracionDias": 1,
+          "fechaInicio": "2027-01-21",
+          "fechaFin": "2027-01-22",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.4",
+          "nombre": "Videos de simulaciones",
+          "descripcion": "Generación de renderizados y animaciones de tráfico.",
+          "duracionDias": 1.2,
+          "fechaInicio": "2027-01-22",
+          "fechaFin": "2027-01-25",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.5",
+          "nombre": "Informe de simulación",
+          "descripcion": "Compilación del informe técnico final.",
+          "duracionDias": 2,
+          "fechaInicio": "2027-01-22",
+          "fechaFin": "2027-01-26",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        }
       ]
     }
   ],
@@ -137,42 +360,55 @@ const DEFAULT_DATA = {
       "fecha": "2026-11-25",
       "areaId": "microsimulacion",
       "areaNombre": "Microsimulación de Tránsito",
-      "tareaId": "3.1",
-      "tareaNombre": "Escenario Base",
+      "tareaId": "3.2",
+      "tareaNombre": "Escenario Propuesto",
       "gravedad": "Crítica",
       "descripcion": "Se requiere incorporar un modelador junior para trabajar en paralelo. Asimismo, es indispensable contar con las matrices OD del escenario propuesto y recomendable del actual. De no disponer de ellas, el análisis de giros a la izquierda BRT tomará 1 semana adicional.",
       "acciones": "Solicitar con urgencia asignación de recurso junior y gestionar entrega de matrices con el equipo de demanda.",
       "estado": "Abierta",
-      "encargadoInformado": "Sí (Informe ejecutivo)"
+      "encargadoInformado": "Sí (Informe ejecutivo)",
+      "personasInformadas": "Manuel, Alicia"
     },
     {
       "id": "INC-002",
       "fecha": "2026-11-25",
       "areaId": "transito",
       "areaNombre": "Ingeniería de Tránsito",
-      "tareaId": "1.4",
-      "tareaNombre": "Superposición de interferencias",
+      "tareaId": "1.2",
+      "tareaNombre": "Propuesta inicial semaforización",
       "gravedad": "Media",
       "descripcion": "Inconsistencias y aspectos pendientes de definición en la señalización horizontal. Geometrías complejas como el Óvalo de Mayolo requieren sustento y ajuste en microsimulación.",
       "acciones": "Emitir comunicación formal al proyectista de diseño vial solicitando aclaraciones técnicas.",
       "estado": "En análisis",
-      "encargadoInformado": "Sí"
+      "encargadoInformado": "Notificado por reunión",
+      "personasInformadas": "Manuel, Alicia, Daniel"
     },
     {
       "id": "INC-003",
       "fecha": "2026-11-25",
       "areaId": "microsimulacion",
       "areaNombre": "Microsimulación de Tránsito",
-      "tareaId": "3.1",
-      "tareaNombre": "Escenario Base",
+      "tareaId": "3.2",
+      "tareaNombre": "Escenario Propuesto",
       "gravedad": "Alta",
       "descripcion": "Se requiere reunión con el responsable de macrosimulación para solicitar información de pasajeros en paraderos de mayor concentración de rutas y matrices OD calibradas.",
       "acciones": "Coordinar fecha y hora para mesa de trabajo técnica inter-equipos.",
       "estado": "Abierta",
-      "encargadoInformado": "Pendiente de notificación"
+      "encargadoInformado": "Sí (Informe ejecutivo)",
+      "personasInformadas": "Manuel, Alicia"
     }
   ],
   "historial": [
+    {
+      "fecha": "2026-11-25",
+      "hora": "18:22",
+      "resumen": "Creación de registro de avance y compatibilizado hasta la fecha 25-11-2026. Solo Ingeniería de Tránsito",
+      "avancesPorArea": {
+        "transito": 67,
+        "its": 0,
+        "microsimulacion": 0
+      }
+    },
     {
       "fecha": "2026-11-25",
       "hora": "17:30",
@@ -191,6 +427,8 @@ let appData = null;
 let currentEditorArea = 'transito';
 let activeSubtaskTaskId = null;
 let activeSubtaskAreaId = null;
+let currentDisplayMetricMode = 'accumulated'; // 'accumulated' or 'daily'
+let selectedDailyDate = null; // null or specific date string
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', async () => {
@@ -204,7 +442,19 @@ async function loadAppData() {
   const local = localStorage.getItem('dashboard_data_v1');
   if (local) {
     try {
-      appData = JSON.parse(local);
+      const parsedLocal = JSON.parse(local);
+      const localTime = new Date(parsedLocal.proyecto && parsedLocal.proyecto.ultimaActualizacion || 0).getTime();
+      const defaultTime = new Date(DEFAULT_DATA.proyecto && DEFAULT_DATA.proyecto.ultimaActualizacion || 0).getTime();
+
+      // If DEFAULT_DATA is newer than local storage, prioritize DEFAULT_DATA
+      if (defaultTime > localTime) {
+        appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        saveToLocalStorage(false);
+        console.log('Datos sincronizados con la versión más reciente.');
+        return;
+      }
+
+      appData = parsedLocal;
       console.log('Datos cargados desde localStorage.');
       return;
     } catch (e) {
@@ -392,16 +642,116 @@ function calculateAreaMetrics(area) {
 }
 
 // ==========================================
-// RENDER VIEWS
+// RENDER VIEWS & METRICS MODES
 // ==========================================
 
+function setDisplayMetricMode(mode, btnEl) {
+  currentDisplayMetricMode = mode;
+  if (btnEl) {
+    const parent = btnEl.parentElement;
+    parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btnEl.classList.add('active');
+  }
+  renderManagerDashboard();
+}
+
+function onDailyDateChanged(dateVal) {
+  selectedDailyDate = dateVal;
+  renderManagerDashboard();
+}
+
+function getChronologicalHistory() {
+  if (!appData.historial || appData.historial.length === 0) return [];
+  return [...appData.historial].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+}
+
+function calculateAreaDailyProgress(areaId, targetDate) {
+  const area = appData.areas.find(a => a.id === areaId);
+  const liveMetrics = area ? calculateAreaMetrics(area) : { realPct: 0 };
+  const sorted = getChronologicalHistory();
+
+  if (sorted.length === 0) {
+    return {
+      dailyGain: liveMetrics.realPct,
+      cumulative: liveMetrics.realPct,
+      isBaseline: true
+    };
+  }
+
+  // If targetDate is specified and matches history
+  const evalDate = targetDate || selectedDailyDate;
+
+  if (evalDate && evalDate !== 'live') {
+    const idx = sorted.findIndex(h => h.fecha === evalDate);
+    if (idx !== -1) {
+      const currentVal = sorted[idx].avancesPorArea ? (sorted[idx].avancesPorArea[areaId] ?? liveMetrics.realPct) : liveMetrics.realPct;
+      if (idx === 0) {
+        return {
+          dailyGain: currentVal,
+          cumulative: currentVal,
+          isBaseline: true
+        };
+      } else {
+        const prevVal = sorted[idx - 1].avancesPorArea ? (sorted[idx - 1].avancesPorArea[areaId] ?? 0) : 0;
+        const gain = Math.round((currentVal - prevVal) * 10) / 10;
+        return {
+          dailyGain: gain,
+          cumulative: currentVal,
+          isBaseline: false
+        };
+      }
+    }
+  }
+
+  // Live calculation: compare current live progress with the last recorded historical entry
+  const latest = sorted[sorted.length - 1];
+  const prevVal = latest && latest.avancesPorArea ? (latest.avancesPorArea[areaId] ?? 0) : 0;
+  const gain = Math.round((liveMetrics.realPct - prevVal) * 10) / 10;
+  return {
+    dailyGain: gain,
+    cumulative: liveMetrics.realPct,
+    isBaseline: false
+  };
+}
+
+function renderDateSelector() {
+  const select = document.getElementById('select-daily-date');
+  if (!select || !appData) return;
+
+  const sorted = getChronologicalHistory();
+  if (sorted.length === 0) {
+    select.innerHTML = '<option value="live">Jornada Actual</option>';
+    return;
+  }
+
+  const currentVal = selectedDailyDate || (sorted.length > 0 ? sorted[sorted.length - 1].fecha : 'live');
+
+  let optionsHtml = '';
+  optionsHtml += `<option value="live" ${currentVal === 'live' ? 'selected' : ''}>Jornada Actual (En vivo)</option>`;
+
+  // List historical dates descending
+  const descSorted = [...sorted].reverse();
+  descSorted.forEach(h => {
+    optionsHtml += `<option value="${h.fecha}" ${h.fecha === currentVal ? 'selected' : ''}>${formatDateSpanish(h.fecha)}</option>`;
+  });
+
+  select.innerHTML = optionsHtml;
+  if (!selectedDailyDate && sorted.length > 0) {
+    selectedDailyDate = sorted[sorted.length - 1].fecha;
+    select.value = selectedDailyDate;
+  }
+}
+
 function renderAll() {
+  renderDateSelector();
   renderManagerDashboard();
   renderEditorView();
 }
 
 function renderManagerDashboard() {
   if (!appData) return;
+
+  renderDateSelector();
 
   // 1. Render 3 Independent Area Cards
   const container = document.getElementById('manager-areas-cards');
@@ -414,12 +764,33 @@ function renderManagerDashboard() {
 
   container.innerHTML = '';
 
+  const isDailyMode = currentDisplayMetricMode === 'daily';
+
   appData.areas.forEach(area => {
     const metrics = calculateAreaMetrics(area);
+    const dailyInfo = calculateAreaDailyProgress(area.id, selectedDailyDate === 'live' ? null : selectedDailyDate);
+
     globalRealSum += metrics.realPct;
     globalSchedSum += metrics.schedPct;
     totalTasksOverall += metrics.totalTasks;
     totalCompletedOverall += metrics.completedTasks;
+
+    const mainKpiValue = isDailyMode ? `${dailyInfo.dailyGain >= 0 ? '+' : ''}${dailyInfo.dailyGain}%` : `${metrics.realPct}%`;
+    const mainKpiLabel = isDailyMode ? 'Avance del Día' : 'Real Acumulado';
+    const targetKpiText = isDailyMode
+      ? `Acumulado total: <strong>${dailyInfo.cumulative}%</strong>`
+      : `Programado: <strong>${metrics.schedPct}%</strong>`;
+
+    let dailyBadgeHtml = '';
+    if (dailyInfo.isBaseline) {
+      dailyBadgeHtml = `<span class="badge badge-info" style="font-size: 0.72rem; text-transform: none;">Línea base inicial: ${dailyInfo.cumulative}%</span>`;
+    } else if (dailyInfo.dailyGain > 0) {
+      dailyBadgeHtml = `<span class="badge badge-success" style="font-size: 0.72rem; text-transform: none; font-weight: 700;">▲ +${dailyInfo.dailyGain}% avance en la jornada</span>`;
+    } else if (dailyInfo.dailyGain < 0) {
+      dailyBadgeHtml = `<span class="badge badge-danger" style="font-size: 0.72rem; text-transform: none;">${dailyInfo.dailyGain}% ajuste</span>`;
+    } else {
+      dailyBadgeHtml = `<span class="badge badge-neutral" style="font-size: 0.72rem; text-transform: none;">0% avance en la jornada</span>`;
+    }
 
     const card = document.createElement('div');
     card.className = `card area-card ${area.id}`;
@@ -434,17 +805,21 @@ function renderManagerDashboard() {
 
       <div class="kpi-row">
         <div>
-          <span class="kpi-val">${metrics.realPct}%</span>
-          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 4px;">Real</span>
+          <span class="kpi-val">${mainKpiValue}</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 4px;">${mainKpiLabel}</span>
         </div>
         <div class="kpi-target">
-          Programado: <strong>${metrics.schedPct}%</strong>
+          ${targetKpiText}
         </div>
+      </div>
+
+      <div style="margin: 0.2rem 0 0.5rem;">
+        ${dailyBadgeHtml}
       </div>
 
       <div class="progress-container">
         <div class="progress-labels">
-          <span>Avance Físico Real</span>
+          <span>Avance Físico Acumulado</span>
           <span>${metrics.realPct}%</span>
         </div>
         <div class="progress-track" title="Línea negra: Meta teórica programada (${metrics.schedPct}%)">
@@ -733,10 +1108,15 @@ function renderManagerIncidents() {
           <span class="incident-title">${inc.id}: ${inc.areaNombre} - Tarea ${inc.tareaId}</span>
           <span style="font-size: 0.78rem; color: var(--text-muted);">(${formatDateSpanish(inc.fecha)})</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
           <span class="badge ${informedBadge}">
             Encargado informado: <strong>${inc.encargadoInformado || 'No'}</strong>
           </span>
+          ${inc.personasInformadas ? `
+            <span class="badge badge-info" style="font-size: 0.74rem; text-transform: none;">
+              👤 Informado a: <strong>${inc.personasInformadas}</strong>
+            </span>
+          ` : ''}
           <span class="badge ${statusBadges[inc.estado] || 'badge-neutral'}">${inc.estado}</span>
         </div>
       </div>
@@ -765,28 +1145,63 @@ function renderManagerHistory() {
     return;
   }
 
-  // Sort descending by date
+  const chrono = getChronologicalHistory();
+  // Sort descending by date for display
   const sorted = [...appData.historial].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
   sorted.forEach(entry => {
     const item = document.createElement('div');
     item.className = 'history-entry';
 
-    const transitoPct = entry.avancesPorArea ? entry.avancesPorArea.transito : '-';
-    const itsPct = entry.avancesPorArea ? entry.avancesPorArea.its : '-';
-    const microPct = entry.avancesPorArea ? entry.avancesPorArea.microsimulacion : '-';
+    const chronoIdx = chrono.findIndex(h => h.fecha === entry.fecha);
+    const isFirstEntry = chronoIdx === 0;
+    const prevEntry = chronoIdx > 0 ? chrono[chronoIdx - 1] : null;
+
+    const transitoPct = entry.avancesPorArea ? (entry.avancesPorArea.transito ?? 0) : 0;
+    const itsPct = entry.avancesPorArea ? (entry.avancesPorArea.its ?? 0) : 0;
+    const microPct = entry.avancesPorArea ? (entry.avancesPorArea.microsimulacion ?? 0) : 0;
+
+    const gainTransito = prevEntry && prevEntry.avancesPorArea
+      ? Math.round((transitoPct - (prevEntry.avancesPorArea.transito ?? 0)) * 10) / 10
+      : (isFirstEntry ? transitoPct : 0);
+
+    const gainIts = prevEntry && prevEntry.avancesPorArea
+      ? Math.round((itsPct - (prevEntry.avancesPorArea.its ?? 0)) * 10) / 10
+      : (isFirstEntry ? itsPct : 0);
+
+    const gainMicro = prevEntry && prevEntry.avancesPorArea
+      ? Math.round((microPct - (prevEntry.avancesPorArea.microsimulacion ?? 0)) * 10) / 10
+      : (isFirstEntry ? microPct : 0);
+
+    let statusBadge = '';
+    if (isFirstEntry) {
+      statusBadge = `<span class="badge badge-info" style="font-size: 0.72rem; text-transform:none;">Línea base consolidada</span>`;
+    } else if (gainTransito > 0 || gainIts > 0 || gainMicro > 0) {
+      statusBadge = `<span class="badge badge-success" style="font-size: 0.72rem; text-transform:none; font-weight:700;">▲ Avance registrado en la jornada</span>`;
+    } else {
+      statusBadge = `<span class="badge badge-neutral" style="font-size: 0.72rem; text-transform:none;">Reporte de actividades</span>`;
+    }
 
     item.innerHTML = `
       <div class="history-dot"></div>
-      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;">
-        <span style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
-          📅 ${formatDateSpanish(entry.fecha)}
-          ${entry.hora ? `<span style="font-weight: 400; font-size: 0.78rem; color: #64748b; margin-left: 4px;">(${entry.hora})</span>` : ''}
-        </span>
-        <div style="display: flex; gap: 0.5rem; font-size: 0.75rem;">
-          <span style="background: #eff6ff; color: #1d4ed8; padding: 2px 6px; border-radius: 4px;">Tránsito: ${transitoPct}%</span>
-          <span style="background: #f0fdfa; color: #0f766e; padding: 2px 6px; border-radius: 4px;">ITS: ${itsPct}%</span>
-          <span style="background: #faf5ff; color: #6d28d9; padding: 2px 6px; border-radius: 4px;">Microsim: ${microPct}%</span>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <span style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">
+            📅 ${formatDateSpanish(entry.fecha)}
+            ${entry.hora ? `<span style="font-weight: 400; font-size: 0.78rem; color: #64748b; margin-left: 4px;">(${entry.hora})</span>` : ''}
+          </span>
+          ${statusBadge}
+        </div>
+        <div style="display: flex; gap: 0.5rem; font-size: 0.75rem; flex-wrap: wrap;">
+          <span style="background: #eff6ff; color: #1d4ed8; padding: 2px 7px; border-radius: 4px; font-weight: 600;">
+            Tránsito: ${gainTransito > 0 ? `▲ +${gainTransito}% hoy` : (isFirstEntry ? `+${transitoPct}%` : '0%')} (Total: ${transitoPct}%)
+          </span>
+          <span style="background: #f0fdfa; color: #0f766e; padding: 2px 7px; border-radius: 4px; font-weight: 600;">
+            ITS: ${gainIts > 0 ? `▲ +${gainIts}% hoy` : (isFirstEntry ? `+${itsPct}%` : '0%')} (Total: ${itsPct}%)
+          </span>
+          <span style="background: #faf5ff; color: #6d28d9; padding: 2px 7px; border-radius: 4px; font-weight: 600;">
+            Microsim: ${gainMicro > 0 ? `▲ +${gainMicro}% hoy` : (isFirstEntry ? `+${microPct}%` : '0%')} (Total: ${microPct}%)
+          </span>
         </div>
       </div>
       <p style="font-size: 0.88rem; color: #334155; line-height: 1.5; margin: 0;">
@@ -961,6 +1376,11 @@ function handleSaveDailyLog(e) {
 // ==========================================
 
 function openSubtaskModal(areaId, taskId) {
+  if (!isCreatorAuthenticated()) {
+    openAuthModal(() => openSubtaskModal(areaId, taskId));
+    return;
+  }
+
   activeSubtaskAreaId = areaId;
   activeSubtaskTaskId = taskId;
 
@@ -1187,6 +1607,9 @@ function renderEditorIncidentsTable() {
         </span>
       </td>
       <td>
+        ${inc.personasInformadas ? `<span style="font-weight: 600; color: #1e3a8a; font-size: 0.82rem;">${inc.personasInformadas}</span>` : `<span style="color: #94a3b8; font-size: 0.78rem;">-</span>`}
+      </td>
+      <td>
         <select class="form-select" style="padding: 2px 6px; font-size: 0.78rem;" onchange="updateIncidentStatusDirect('${inc.id}', this.value)">
           <option value="Abierta" ${inc.estado === 'Abierta' ? 'selected' : ''}>Abierta</option>
           <option value="En análisis" ${inc.estado === 'En análisis' ? 'selected' : ''}>En análisis</option>
@@ -1231,6 +1654,10 @@ function updateIncidentTaskOptions() {
 }
 
 function openNewIncidentModal() {
+  if (!isCreatorAuthenticated()) {
+    openAuthModal(() => openNewIncidentModal());
+    return;
+  }
   document.getElementById('incident-modal-title').textContent = 'Registrar Inconveniente / Incidencia';
   document.getElementById('incident-edit-id').value = '';
   document.getElementById('inc-date').value = getTodayDateString();
@@ -1240,12 +1667,17 @@ function openNewIncidentModal() {
   document.getElementById('inc-actions').value = '';
   document.getElementById('inc-severity').value = 'Media';
   document.getElementById('inc-informed').value = 'Sí';
+  document.getElementById('inc-persons').value = '';
   document.getElementById('inc-status').value = 'Abierta';
 
   document.getElementById('incident-modal').classList.add('active');
 }
 
 function openEditIncidentModal(incId) {
+  if (!isCreatorAuthenticated()) {
+    openAuthModal(() => openEditIncidentModal(incId));
+    return;
+  }
   const inc = appData.incidencias.find(i => i.id === incId);
   if (!inc) return;
 
@@ -1259,6 +1691,7 @@ function openEditIncidentModal(incId) {
   document.getElementById('inc-actions').value = inc.acciones;
   document.getElementById('inc-severity').value = inc.gravedad;
   document.getElementById('inc-informed').value = inc.encargadoInformado;
+  document.getElementById('inc-persons').value = inc.personasInformadas || '';
   document.getElementById('inc-status').value = inc.estado;
 
   document.getElementById('incident-modal').classList.add('active');
@@ -1278,6 +1711,7 @@ function handleSaveIncident(e) {
   const actVal = document.getElementById('inc-actions').value.trim();
   const sevVal = document.getElementById('inc-severity').value;
   const infVal = document.getElementById('inc-informed').value;
+  const personsVal = document.getElementById('inc-persons').value.trim();
   const statVal = document.getElementById('inc-status').value;
 
   const areaObj = appData.areas.find(a => a.id === areaVal);
@@ -1295,6 +1729,7 @@ function handleSaveIncident(e) {
       inc.acciones = actVal;
       inc.gravedad = sevVal;
       inc.encargadoInformado = infVal;
+      inc.personasInformadas = personsVal;
       inc.estado = statVal;
     }
   } else {
@@ -1311,7 +1746,8 @@ function handleSaveIncident(e) {
       descripcion: descVal,
       acciones: actVal,
       estado: statVal,
-      encargadoInformado: infVal
+      encargadoInformado: infVal,
+      personasInformadas: personsVal
     };
     appData.incidencias.unshift(newInc);
   }
@@ -1486,28 +1922,109 @@ async function handleGitHubPublish(e) {
 }
 
 // ==========================================
-// TABS & UTILITY
+// CREATOR AUTHENTICATION (PIN PROTECTION)
 // ==========================================
 
-function switchTab(tabName) {
-  const tabManager = document.getElementById('tab-manager');
-  const tabEditor = document.getElementById('tab-editor');
-  const btnManager = document.getElementById('tab-btn-manager');
-  const btnEditor = document.getElementById('tab-btn-editor');
+const CREATOR_PIN = '316881';
+let authPendingAction = null;
 
-  if (tabName === 'manager') {
-    tabManager.classList.add('active');
-    tabEditor.classList.remove('active');
-    btnManager.classList.add('active');
-    btnEditor.classList.remove('active');
+function isCreatorAuthenticated() {
+  return sessionStorage.getItem('creator_unlocked') === 'true';
+}
+
+function openAuthModal(callbackAction = null) {
+  authPendingAction = callbackAction;
+  const modal = document.getElementById('auth-modal');
+  const input = document.getElementById('auth-password-input');
+  const errorMsg = document.getElementById('auth-error-msg');
+  if (input) input.value = '';
+  if (errorMsg) errorMsg.style.display = 'none';
+  if (modal) modal.classList.add('active');
+  setTimeout(() => { if (input) input.focus(); }, 100);
+}
+
+function closeAuthModal() {
+  const modal = document.getElementById('auth-modal');
+  if (modal) modal.classList.remove('active');
+  authPendingAction = null;
+}
+
+function handleAuthSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('auth-password-input');
+  const errorMsg = document.getElementById('auth-error-msg');
+  const enteredPin = input ? input.value.trim() : '';
+
+  if (enteredPin === CREATOR_PIN) {
+    sessionStorage.setItem('creator_unlocked', 'true');
+    closeAuthModal();
+    triggerToast('Acceso concedido. Bienvenido, mi creador.', '🔓');
+
+    if (authPendingAction && typeof authPendingAction === 'function') {
+      const act = authPendingAction;
+      authPendingAction = null;
+      act();
+    } else {
+      switchViewMode('editor');
+    }
+  } else {
+    if (errorMsg) errorMsg.style.display = 'block';
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+  }
+}
+
+// ==========================================
+// VIEW SWITCHING (DASHBOARD <-> EDITOR)
+// ==========================================
+
+let currentViewMode = 'dashboard'; // 'dashboard' or 'editor'
+
+function toggleViewMode() {
+  if (currentViewMode === 'dashboard') {
+    if (!isCreatorAuthenticated()) {
+      openAuthModal(() => switchViewMode('editor'));
+      return;
+    }
+    switchViewMode('editor');
+  } else {
+    switchViewMode('dashboard');
+  }
+}
+
+function switchViewMode(mode) {
+  currentViewMode = mode;
+  const tabDashboard = document.getElementById('tab-dashboard') || document.getElementById('tab-manager');
+  const tabEditor = document.getElementById('tab-editor');
+  const btnToggle = document.getElementById('btn-toggle-mode');
+
+  if (mode === 'dashboard') {
+    if (tabDashboard) tabDashboard.classList.add('active');
+    if (tabEditor) tabEditor.classList.remove('active');
+    if (btnToggle) {
+      btnToggle.className = 'btn btn-primary btn-sm no-print';
+      btnToggle.innerHTML = '✏️ Modo Edición / Registro';
+      btnToggle.title = 'Entrar al modo de registro para actualizar avances, sincerar metas o reportar incidencias';
+    }
     renderManagerDashboard();
   } else {
-    tabManager.classList.remove('active');
-    tabEditor.classList.add('active');
-    btnManager.classList.remove('active');
-    btnEditor.classList.add('active');
+    if (tabDashboard) tabDashboard.classList.remove('active');
+    if (tabEditor) tabEditor.classList.add('active');
+    if (btnToggle) {
+      btnToggle.className = 'btn btn-success btn-sm no-print';
+      btnToggle.innerHTML = '📊 Volver al Tablero de Avance';
+      btnToggle.title = 'Regresar al tablero general de monitoreo';
+    }
     renderEditorView();
   }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Backward compatibility alias
+function switchTab(tabName) {
+  switchViewMode(tabName === 'editor' ? 'editor' : 'dashboard');
 }
 
 function triggerToast(message, icon = '✅') {

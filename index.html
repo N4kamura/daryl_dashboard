@@ -20,7 +20,7 @@
           Ingeniería de Tránsito, Sistemas Inteligentes de Transporte (ITS) y Microsimulación
         </p>
       </div>
-      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
         <div class="author-chip">
           <span>👤 <strong>Daryl Candia</strong></span>
           <span style="opacity: 0.6;">|</span>
@@ -29,40 +29,51 @@
         <button class="btn btn-secondary btn-sm no-print" onclick="window.print()">
           🖨️ Imprimir / Guardar PDF
         </button>
+        <button class="btn btn-primary btn-sm no-print" id="btn-toggle-mode" onclick="toggleViewMode()" title="Entrar al modo de registro para actualizar avances, sincerar metas o reportar incidencias">
+          ✏️ Modo Edición / Registro
+        </button>
       </div>
     </div>
   </header>
-
-  <!-- Sticky Nav Tabs -->
-  <nav class="nav-tabs-wrapper no-print">
-    <div class="nav-tabs">
-      <button class="nav-tab-btn active" id="tab-btn-manager" onclick="switchTab('manager')">
-        📊 Vista del Encargado (Dashboard)
-      </button>
-      <button class="nav-tab-btn" id="tab-btn-editor" onclick="switchTab('editor')">
-        ✏️ Mi Registro / Edición de Avance
-        <span class="tab-badge" id="unsaved-badge" style="display:none; background:#fef3c7; color:#92400e;">Cambios pendientes</span>
-      </button>
-    </div>
-  </nav>
 
   <!-- Main Content Container -->
   <main class="main-content">
 
     <!-- ========================================== -->
-    <!-- TAB 1: VISTA DEL ENCARGADO (DASHBOARD)     -->
+    <!-- VISTA PRINCIPAL: CRONOGRAMA Y AVANCE       -->
     <!-- ========================================== -->
-    <section id="tab-manager" class="tab-pane active">
+    <section id="tab-dashboard" class="tab-pane active">
 
-      <!-- Executive Overview Card -->
+      <!-- Executive Overview Card with View Toggle & Date Selector -->
       <div class="card" style="margin-bottom: 1.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
-        <div class="card-header" style="border:none; margin-bottom:0.25rem;">
+        <div class="card-header" style="border:none; margin-bottom:0.25rem; flex-wrap: wrap; gap: 1rem;">
           <div>
-            <h2 class="card-title" style="font-size: 1.25rem;">Resumen de Estado Ejecutivo al Día de Hoy</h2>
+            <h2 class="card-title" style="font-size: 1.25rem;">📊 Monitoreo General y Cronograma de Avance</h2>
             <p class="card-subtitle" id="today-date-banner">Fecha de evaluación: Calculando...</p>
           </div>
-          <div id="general-status-pill">
-            <!-- Dynamically injected badge -->
+          
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <!-- Selector de Modo: Acumulado vs Avance Diario -->
+            <div class="btn-group no-print">
+              <button class="active" id="btn-mode-accumulated" onclick="setDisplayMetricMode('accumulated', this)">
+                📊 Avance Acumulado
+              </button>
+              <button id="btn-mode-daily" onclick="setDisplayMetricMode('daily', this)">
+                📅 Avance del Día
+              </button>
+            </div>
+
+            <!-- Selector de Fecha para ver jornada específica -->
+            <div style="display: flex; align-items: center; gap: 0.35rem;" class="no-print">
+              <label for="select-daily-date" style="font-size: 0.78rem; font-weight: 600; color: #475569;">Jornada:</label>
+              <select id="select-daily-date" class="form-select" style="padding: 4px 8px; font-size: 0.8rem; width: auto;" onchange="onDailyDateChanged(this.value)">
+                <!-- Dynamically populated from historial dates -->
+              </select>
+            </div>
+
+            <div id="general-status-pill">
+              <!-- Dynamically injected badge -->
+            </div>
           </div>
         </div>
       </div>
@@ -169,6 +180,9 @@
           </span>
         </div>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn btn-success btn-sm" onclick="toggleViewMode()">
+            📊 Volver al Cronograma
+          </button>
           <button class="btn btn-secondary btn-sm" onclick="exportDataJson()">
             💾 Descargar data.json
           </button>
@@ -252,6 +266,7 @@
                 <th>Gravedad</th>
                 <th>Descripción & Acciones</th>
                 <th>Encargado Informado</th>
+                <th>Informado a</th>
                 <th>Estado</th>
                 <th style="text-align: right;">Acciones</th>
               </tr>
@@ -416,6 +431,14 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="form-label">Persona(s) Informada(s) (Nombres y/o Apellidos)</label>
+          <input type="text" id="inc-persons" class="form-input" placeholder="Ej: Ing. Morales, Carlos Ramos (puedes ingresar uno o varios separados por comas)">
+          <span style="font-size: 0.73rem; color: #64748b; margin-top: 2px; display: block;">
+            Ingresa nombres y/o apellidos de la(s) persona(s) a quienes informaste de esta incidencia.
+          </span>
+        </div>
+
         <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem;">
           <button type="button" class="btn btn-secondary btn-sm" onclick="closeIncidentModal()">Cancelar</button>
           <button type="submit" class="btn btn-primary btn-sm">Guardar Incidencia</button>
@@ -476,6 +499,33 @@
           <button type="submit" class="btn btn-success btn-sm" id="gh-publish-btn">
             🚀 Publicar Ahora a GitHub
           </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: AUTORIZACIÓN DEL CREADOR (PASSWORD) -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-box" style="max-width: 440px; text-align: center; border-top: 4px solid #2563eb;">
+      <div style="font-size: 2.8rem; margin-bottom: 0.5rem;">🔒</div>
+      <h3 class="modal-title" style="margin-bottom: 0.6rem; font-size: 1.15rem; color: #0f172a;">Acceso Restringido</h3>
+      <p style="font-size: 0.92rem; color: #334155; margin-bottom: 1.25rem; font-weight: 600; line-height: 1.5; background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px dashed #cbd5e1;">
+        "Esto es solo para mi creador, ingrese su contraseña, mi creador"
+      </p>
+      
+      <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <input type="password" id="auth-password-input" class="form-input" placeholder="••••••" 
+            pattern="[0-9]*" inputmode="numeric" style="text-align: center; font-size: 1.5rem; letter-spacing: 0.3em; font-weight: 800; padding: 0.6rem; border: 2px solid #cbd5e1;" required autofocus>
+          <div id="auth-error-msg" style="display:none; color: #dc2626; font-size: 0.82rem; font-weight: 600; margin-top: 0.5rem;">
+            ❌ Contraseña incorrecta. Acceso denegado.
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.6rem; justify-content: center;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="closeAuthModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary btn-sm" style="padding: 0.5rem 1.4rem;">Ingresar al Modo Edición</button>
         </div>
       </form>
     </div>
