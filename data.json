@@ -1,0 +1,362 @@
+{
+  "proyecto": {
+    "titulo": "Plan de Trabajo Ejecutivo - Ingeniería de Tránsito, ITS y Microsimulación",
+    "responsable": "Daryl Candia",
+    "cargo": "Ingeniero Civil - CIP N° 352085 | Modelador Senior de Tráfico y Peatones | Ingeniero de ITS",
+    "fechaInicioGeneral": "2026-11-16",
+    "fechaFinGeneral": "2027-01-26",
+    "ultimaActualizacion": "2026-11-25T17:30:00"
+  },
+  "areas": [
+    {
+      "id": "transito",
+      "nombre": "Ingeniería de Tránsito",
+      "duracionDias": 17.15,
+      "fechaInicio": "2026-11-16",
+      "fechaFin": "2026-12-09",
+      "tareas": [
+        {
+          "id": "1.1",
+          "nombre": "Revisión de planos",
+          "descripcion": "Revisión inicial integral de la planimetría y geometrías viales.",
+          "duracionDias": 1,
+          "fechaInicio": "2026-11-16",
+          "fechaFin": "2026-11-16",
+          "pesoEnArea": 10,
+          "porcentajeManual": 100,
+          "subtareas": [
+            {
+              "id": "1.1.1",
+              "nombre": "Revisión de planos geométricos",
+              "descripcion": "Análisis de ejes viales e intersecciones críticas",
+              "unidad": "planos",
+              "meta": 12,
+              "ejecutado": 12,
+              "peso": 50,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.1.2",
+              "nombre": "Identificación de incongruencias iniciales",
+              "descripcion": "Detección de interferencias preliminares",
+              "unidad": "%",
+              "meta": 100,
+              "ejecutado": 100,
+              "peso": 50,
+              "porcentaje": 100
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "nombre": "Propuesta inicial semaforización",
+          "descripcion": "Propuesta de ubicación y cantidad de semáforos en el proyecto.",
+          "duracionDias": 4.45,
+          "fechaInicio": "2026-11-17",
+          "fechaFin": "2026-11-23",
+          "pesoEnArea": 25,
+          "porcentajeManual": 100,
+          "subtareas": [
+            {
+              "id": "1.2.1",
+              "nombre": "Catastro y ubicación de intersecciones semaforizadas",
+              "descripcion": "Definición de puntos de control semafórico",
+              "unidad": "intersecciones",
+              "meta": 15,
+              "ejecutado": 15,
+              "peso": 60,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.2.2",
+              "nombre": "Cuadro preliminar de equipos y cabezales",
+              "descripcion": "Estimación de postes, ménsulas y caras de semáforos",
+              "unidad": "%",
+              "meta": 100,
+              "ejecutado": 100,
+              "peso": 40,
+              "porcentaje": 100
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "nombre": "Reorganización y revisión de conteos",
+          "descripcion": "Validación y procesamiento de aforos vehiculares y peatonales.",
+          "duracionDias": 3,
+          "fechaInicio": "2026-11-23",
+          "fechaFin": "2026-11-26",
+          "pesoEnArea": 15,
+          "porcentajeManual": 80,
+          "subtareas": [
+            {
+              "id": "1.3.1",
+              "nombre": "Consolidación de matrices de giro",
+              "descripcion": "Revisión de consistencia horaria en horas punta",
+              "unidad": "estaciones",
+              "meta": 10,
+              "ejecutado": 8,
+              "peso": 70,
+              "porcentaje": 80
+            },
+            {
+              "id": "1.3.2",
+              "nombre": "Verificación de factores de hora pico (FHP)",
+              "descripcion": "Cálculo de flujos equivalentes",
+              "unidad": "%",
+              "meta": 100,
+              "ejecutado": 80,
+              "peso": 30,
+              "porcentaje": 80
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "nombre": "Superposición de interferencias",
+          "descripcion": "Cruce con redes existentes de servicios y obras civiles.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-11-24",
+          "fechaFin": "2026-11-26",
+          "pesoEnArea": 10,
+          "porcentajeManual": 70,
+          "subtareas": []
+        },
+        {
+          "id": "1.5",
+          "nombre": "Reubicación de semaforización",
+          "descripcion": "Ajuste de emplazamiento de semáforos según interferencias detectadas.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-11-24",
+          "fechaFin": "2026-11-26",
+          "pesoEnArea": 10,
+          "porcentajeManual": 50,
+          "subtareas": []
+        },
+        {
+          "id": "1.6",
+          "nombre": "Cálculo de tiempos y lógica semafórica",
+          "descripcion": "Cálculo de tiempos de verde, definición de prioridades para el transporte público, determinación de tiempos peatonales y desarrollo de la lógica de semaforización actuada, de acuerdo con los estándares americanos NEMA.",
+          "duracionDias": 8.7,
+          "fechaInicio": "2026-11-26",
+          "fechaFin": "2026-12-09",
+          "pesoEnArea": 30,
+          "porcentajeManual": 0,
+          "subtareas": [
+            {
+              "id": "1.6.1",
+              "nombre": "Cálculo de despejes y verdes peatonales",
+              "descripcion": "Norma NEMA y manual de semaforización",
+              "unidad": "intersecciones",
+              "meta": 15,
+              "ejecutado": 0,
+              "peso": 30,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.2",
+              "nombre": "Lógica de prioridad para transporte público (BRT)",
+              "descripcion": "Fases y ventanas de prioridad",
+              "unidad": "%",
+              "meta": 100,
+              "ejecutado": 0,
+              "peso": 35,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.3",
+              "nombre": "Programación de lógica actuada NEMA",
+              "descripcion": "Estructura de anillos y barreras para controladores",
+              "unidad": "%",
+              "meta": 100,
+              "ejecutado": 0,
+              "peso": 35,
+              "porcentaje": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "its",
+      "nombre": "Ingeniería de ITS",
+      "duracionDias": 26,
+      "fechaInicio": "2026-12-09",
+      "fechaFin": "2027-01-14",
+      "tareas": [
+        {
+          "id": "2.1",
+          "nombre": "Definición de Arquitectura de ITS",
+          "descripcion": "Definición de los servicios y sistemas ITS que formarán parte del proyecto, tomando como referencia la arquitectura americana ARC-IT.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-12-09",
+          "fechaFin": "2026-12-11",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.2",
+          "nombre": "Exploración de Soluciones",
+          "descripcion": "Desarrollo de rondas de solicitudes de información (RFI) y cotizaciones (RFQ) para identificar, evaluar y proponer soluciones tecnológicas compatibles con los servicios definidos en la arquitectura ITS.",
+          "duracionDias": 10,
+          "fechaInicio": "2026-12-10",
+          "fechaFin": "2026-12-24",
+          "pesoEnArea": 25,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.3",
+          "nombre": "Elaboración del Concepto de Operaciones (ConOps)",
+          "descripcion": "Definición del funcionamiento operativo de los sistemas ITS considerados en el proyecto, incluyendo sus interacciones y principales escenarios de operación.",
+          "duracionDias": 2,
+          "fechaInicio": "2026-12-10",
+          "fechaFin": "2026-12-14",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.4",
+          "nombre": "Definición de los Requisitos de los Sistemas",
+          "descripcion": "Definición de los requisitos funcionales y técnicos necesarios para la adquisición, implementación e integración de las tecnologías correspondientes a cada sistema ITS.",
+          "duracionDias": 3,
+          "fechaInicio": "2026-12-22",
+          "fechaFin": "2026-12-25",
+          "pesoEnArea": 15,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "2.5",
+          "nombre": "Diseño a detalle de ITS",
+          "descripcion": "Desarrollo de la ingeniería de detalle de los sistemas ITS, incluyendo infraestructura civil, canalizaciones, suministro eléctrico, comunicaciones, equipamiento e integración de sistemas, según corresponda. Necesario el apoyo de especialistas eléctricos y de comunicaciones.",
+          "duracionDias": 15,
+          "fechaInicio": "2026-12-24",
+          "fechaFin": "2027-01-14",
+          "pesoEnArea": 30,
+          "porcentajeManual": 0,
+          "subtareas": []
+        }
+      ]
+    },
+    {
+      "id": "microsimulacion",
+      "nombre": "Microsimulación de Tránsito",
+      "duracionDias": 34,
+      "fechaInicio": "2026-12-09",
+      "fechaFin": "2027-01-26",
+      "tareas": [
+        {
+          "id": "3.1",
+          "nombre": "Escenario Base",
+          "descripcion": "Modelación, calibración y validación del estado actual de la red de tráfico.",
+          "duracionDias": 16,
+          "fechaInicio": "2026-12-09",
+          "fechaFin": "2026-12-31",
+          "pesoEnArea": 35,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.2",
+          "nombre": "Escenario Propuesto",
+          "descripcion": "Modelación de las mejoras geométricas, semafóricas y operacionales del proyecto.",
+          "duracionDias": 15,
+          "fechaInicio": "2026-12-31",
+          "fechaFin": "2027-01-21",
+          "pesoEnArea": 35,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.3",
+          "nombre": "Resultados de simulaciones",
+          "descripcion": "Extracción y análisis de demoras, colas, niveles de servicio y velocidades de viaje.",
+          "duracionDias": 1,
+          "fechaInicio": "2027-01-21",
+          "fechaFin": "2027-01-22",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.4",
+          "nombre": "Videos de simulaciones",
+          "descripcion": "Generación de renderizados 2D/3D y videos explicativos para el cliente.",
+          "duracionDias": 1.2,
+          "fechaInicio": "2027-01-22",
+          "fechaFin": "2027-01-25",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        },
+        {
+          "id": "3.5",
+          "nombre": "Informe de simulación",
+          "descripcion": "Redacción y compilación del informe técnico final de microsimulación.",
+          "duracionDias": 2,
+          "fechaInicio": "2027-01-22",
+          "fechaFin": "2027-01-26",
+          "pesoEnArea": 10,
+          "porcentajeManual": 0,
+          "subtareas": []
+        }
+      ]
+    }
+  ],
+  "incidencias": [
+    {
+      "id": "INC-001",
+      "fecha": "2026-11-25",
+      "areaId": "microsimulacion",
+      "areaNombre": "Microsimulación de Tránsito",
+      "tareaId": "3.1",
+      "tareaNombre": "Escenario Base",
+      "gravedad": "Crítica",
+      "descripcion": "Se requiere incorporar un modelador junior para trabajar en paralelo. Asimismo, es indispensable contar con las matrices OD del escenario propuesto y recomendable del actual. De no disponer de ellas, el análisis de giros a la izquierda BRT tomará 1 semana adicional.",
+      "acciones": "Solicitar con urgencia asignación de recurso junior y gestionar entrega de matrices con el equipo de demanda.",
+      "estado": "Abierta",
+      "encargadoInformado": "Sí (Informe ejecutivo)"
+    },
+    {
+      "id": "INC-002",
+      "fecha": "2026-11-25",
+      "areaId": "transito",
+      "areaNombre": "Ingeniería de Tránsito",
+      "tareaId": "1.4",
+      "tareaNombre": "Superposición de interferencias",
+      "gravedad": "Media",
+      "descripcion": "Inconsistencias y aspectos pendientes de definición en la señalización horizontal. Geometrías complejas como el Óvalo de Mayolo requieren sustento y ajuste en microsimulación.",
+      "acciones": "Emitir comunicación formal al proyectista de diseño vial solicitando aclaraciones técnicas.",
+      "estado": "En análisis",
+      "encargadoInformado": "Sí"
+    },
+    {
+      "id": "INC-003",
+      "fecha": "2026-11-25",
+      "areaId": "microsimulacion",
+      "areaNombre": "Microsimulación de Tránsito",
+      "tareaId": "3.1",
+      "tareaNombre": "Escenario Base",
+      "gravedad": "Alta",
+      "descripcion": "Se requiere reunión con el responsable de macrosimulación para solicitar información de pasajeros en paraderos de mayor concentración de rutas y matrices OD calibradas.",
+      "acciones": "Coordinar fecha y hora para mesa de trabajo técnica inter-equipos.",
+      "estado": "Abierta",
+      "encargadoInformado": "Pendiente de reunión"
+    }
+  ],
+  "historial": [
+    {
+      "fecha": "2026-11-25",
+      "hora": "17:30",
+      "resumen": "Avance en revisión de planos y propuesta inicial semaforizada al 100%. Reorganización de conteos al 80% y superposición de interferencias en curso al 70%. Alertas emitidas por necesidad de matrices OD y modelador junior.",
+      "avancesPorArea": {
+        "transito": 68.5,
+        "its": 0,
+        "microsimulacion": 0
+      }
+    }
+  ]
+}

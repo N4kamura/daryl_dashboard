@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Ejecutivo | Tránsito, ITS y Microsimulación</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚦</text></svg>">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="header-container">
+    <div class="header-top">
+      <div>
+        <h1 class="brand-title">
+          <span>🚦</span> Plan de Trabajo Ejecutivo - Control y Avance
+        </h1>
+        <p class="brand-subtitle" id="project-title-text">
+          Ingeniería de Tránsito, Sistemas Inteligentes de Transporte (ITS) y Microsimulación
+        </p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <div class="author-chip">
+          <span>👤 <strong>Daryl Candia</strong></span>
+          <span style="opacity: 0.6;">|</span>
+          <span>CIP N° 352085</span>
+        </div>
+        <button class="btn btn-secondary btn-sm no-print" onclick="window.print()">
+          🖨️ Imprimir / Guardar PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Nav Tabs -->
+  <nav class="nav-tabs-wrapper no-print">
+    <div class="nav-tabs">
+      <button class="nav-tab-btn active" id="tab-btn-manager" onclick="switchTab('manager')">
+        📊 Vista del Encargado (Dashboard)
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-editor" onclick="switchTab('editor')">
+        ✏️ Mi Registro / Edición de Avance
+        <span class="tab-badge" id="unsaved-badge" style="display:none; background:#fef3c7; color:#92400e;">Cambios pendientes</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: VISTA DEL ENCARGADO (DASHBOARD)     -->
+    <!-- ========================================== -->
+    <section id="tab-manager" class="tab-pane active">
+
+      <!-- Executive Overview Card -->
+      <div class="card" style="margin-bottom: 1.5rem; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+        <div class="card-header" style="border:none; margin-bottom:0.25rem;">
+          <div>
+            <h2 class="card-title" style="font-size: 1.25rem;">Resumen de Estado Ejecutivo al Día de Hoy</h2>
+            <p class="card-subtitle" id="today-date-banner">Fecha de evaluación: Calculando...</p>
+          </div>
+          <div id="general-status-pill">
+            <!-- Dynamically injected badge -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Independent Areas Grid -->
+      <div class="grid-3" id="manager-areas-cards">
+        <!-- Dynamically rendered by app.js: Tránsito, ITS, Microsimulación -->
+      </div>
+
+      <!-- Quick Metrics Row -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.75rem;">
+        <div class="card" style="padding: 1rem;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight:600;">TAREAS PRINCIPALES</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);" id="metric-total-tasks">16</div>
+          <div style="font-size: 0.75rem; color: #16a34a;" id="metric-completed-tasks">0 Completadas</div>
+        </div>
+        <div class="card" style="padding: 1rem;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight:600;">INCIDENCIAS ABIERTAS</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #dc2626;" id="metric-open-incidents">0</div>
+          <div style="font-size: 0.75rem; color: #991b1b;" id="metric-critical-incidents">0 Críticas</div>
+        </div>
+        <div class="card" style="padding: 1rem;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight:600;">ENCARGADO INFORMADO</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #0284c7;" id="metric-informed-count">0 / 0</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">Incidencias comunicadas</div>
+        </div>
+        <div class="card" style="padding: 1rem;">
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight:600;">HORIZONTE TEMPORAL</div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: #334155; margin-top: 0.3rem;">16/11/26 - 26/01/27</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);" id="metric-days-remaining">Calculando días...</div>
+        </div>
+      </div>
+
+      <!-- Main Tasks & Subtasks Breakdown (Divided by Area) -->
+      <div style="margin-bottom: 1.75rem;">
+        <div class="card" style="margin-bottom: 1rem; padding: 1rem 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div>
+              <h3 class="card-title" style="font-size: 1.15rem;">📋 Cronograma y Tareas Divididas por Área</h3>
+              <p class="card-subtitle">Seguimiento individual para Tránsito, ITS y Microsimulación. Clic en cualquier tarea para ver sus subtareas.</p>
+            </div>
+            <div class="btn-group no-print">
+              <button class="active" onclick="filterManagerTasks('all', this)">Mostrar Todas</button>
+              <button onclick="filterManagerTasks('transito', this)">🚦 Tránsito</button>
+              <button onclick="filterManagerTasks('its', this)">🛰️ ITS</button>
+              <button onclick="filterManagerTasks('microsimulacion', this)">🚘 Microsimulación</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divided Area Task Tables Container -->
+        <div id="manager-tasks-container">
+          <!-- Dynamically populated by area: Tránsito, ITS, Microsimulación -->
+        </div>
+      </div>
+
+      <!-- Section: Incidencias e Inconvenientes Reportados -->
+      <div class="card" style="margin-bottom: 1.75rem;">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">⚠️ Registro de Inconvenientes, Alertas e Incidencias</h3>
+            <p class="card-subtitle">Problemas identificados en obra/gabinete que requieren atención o conocimiento del encargado</p>
+          </div>
+          <div class="btn-group no-print">
+            <button class="active" onclick="filterIncidents('all', this)">Todas</button>
+            <button onclick="filterIncidents('Abierta', this)">Abiertas</button>
+            <button onclick="filterIncidents('Crítica', this)">Críticas</button>
+            <button onclick="filterIncidents('Resuelta', this)">Resueltas</button>
+          </div>
+        </div>
+
+        <div id="manager-incidents-list">
+          <!-- Dynamically populated incident cards -->
+        </div>
+      </div>
+
+      <!-- Section: Bitácora de Reportes Diarios (Historial por fechas) -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">📅 Bitácora Histórica de Avances Diarios</h3>
+            <p class="card-subtitle">Registro cronológico de lo ejecutado en cada jornada</p>
+          </div>
+        </div>
+
+        <div id="manager-history-timeline" style="padding: 0.5rem 0.5rem 0;">
+          <!-- Dynamically populated history entries -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: MI REGISTRO / EDICIÓN DE AVANCE    -->
+    <!-- ========================================== -->
+    <section id="tab-editor" class="tab-pane">
+
+      <!-- Action bar & Persistence Status -->
+      <div class="toolbar">
+        <div>
+          <span style="font-weight: 700; color: #1e293b;">🛠️ Modo de Ingreso y Edición</span>
+          <span id="storage-status-text" style="font-size: 0.8rem; color: #16a34a; margin-left: 0.5rem;">
+            ● Guardado localmente
+          </span>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="btn btn-secondary btn-sm" onclick="exportDataJson()">
+            💾 Descargar data.json
+          </button>
+          <label class="btn btn-secondary btn-sm" style="cursor: pointer; margin: 0;">
+            📂 Cargar data.json
+            <input type="file" id="import-json-file" accept=".json" style="display:none;" onchange="importDataJson(event)">
+          </label>
+          <button class="btn btn-dark btn-sm" onclick="openGitHubModal()">
+            🚀 Publicar en GitHub
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 1: Registrar en Bitácora Diaria -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">📝 Registrar Avance del Día en Bitácora</h3>
+            <p class="card-subtitle">Agrega lo realizado hoy para que el encargado lo lea en el historial diario</p>
+          </div>
+        </div>
+        <form id="daily-log-form" onsubmit="handleSaveDailyLog(event)">
+          <div class="form-row">
+            <div class="form-group" style="max-width: 200px;">
+              <label class="form-label">Fecha del Reporte</label>
+              <input type="date" id="log-date" class="form-input" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">Resumen de actividades realizadas en la jornada</label>
+              <input type="text" id="log-summary" class="form-input" placeholder="Ej: Conclusión de aforos vehiculares en horas punta y cálculo de FHP..." required>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <button type="submit" class="btn btn-primary btn-sm">
+              ➕ Guardar en Historial Diario
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Card 2: Actualización de Tareas y Subtareas por Área -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">📊 Actualizar Porcentajes y Desglose de Subtareas</h3>
+            <p class="card-subtitle">
+              Puedes ingresar el porcentaje directo o desglosar la tarea en tareas secundarias con unidades y cantidades
+            </p>
+          </div>
+          <div class="btn-group">
+            <button class="active" id="editor-area-btn-transito" onclick="switchEditorArea('transito', this)">Tránsito</button>
+            <button id="editor-area-btn-its" onclick="switchEditorArea('its', this)">ITS</button>
+            <button id="editor-area-btn-microsimulacion" onclick="switchEditorArea('microsimulacion', this)">Microsimulación</button>
+          </div>
+        </div>
+
+        <div id="editor-tasks-container">
+          <!-- Dynamically populated tasks editor -->
+        </div>
+      </div>
+
+      <!-- Card 3: Gestión de Incidencias y Problemas -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">⚠️ Reportar o Actualizar Inconvenientes / Incidencias</h3>
+            <p class="card-subtitle">Notifica problemas que puedan impactar el cronograma o requieran decisiones del encargado</p>
+          </div>
+          <button class="btn btn-danger btn-sm" onclick="openNewIncidentModal()">
+            ➕ Nueva Incidencia
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Área / Tarea</th>
+                <th>Gravedad</th>
+                <th>Descripción & Acciones</th>
+                <th>Encargado Informado</th>
+                <th>Estado</th>
+                <th style="text-align: right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="editor-incidents-tbody">
+              <!-- Dynamically populated incident editor rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL: GESTIÓN DE SUBTAREAS               -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="subtask-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title" id="modal-task-name">Desglose de Subtareas</h3>
+          <p class="card-subtitle" id="modal-task-desc">Configuración de cantidades, unidades y pesos</p>
+        </div>
+        <button class="modal-close" onclick="closeSubtaskModal()">&times;</button>
+      </div>
+
+      <!-- Add Subtask Form -->
+      <div style="background: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 1.25rem;">
+        <h4 style="font-size: 0.9rem; margin-bottom: 0.75rem; color: #1e293b;">➕ Agregar Subtarea Secundaria</h4>
+        <form id="add-subtask-form" onsubmit="handleAddSubtask(event)">
+          <div class="form-row">
+            <div class="form-group" style="grid-column: span 2;">
+              <label class="form-label">Nombre de la subtarea *</label>
+              <input type="text" id="subtask-name" class="form-input" placeholder="Ej: Aforos peatonales Av. Principal" required>
+            </div>
+            <div class="form-group" style="grid-column: span 2;">
+              <label class="form-label">Descripción</label>
+              <input type="text" id="subtask-desc" class="form-input" placeholder="Detalle técnico u observación">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Unidad de Medida *</label>
+              <input type="text" id="subtask-unit" class="form-input" placeholder="Ej: %, planos, intersecciones..." list="unit-suggestions" required>
+              <datalist id="unit-suggestions">
+                <option value="% (Porcentaje)">
+                <option value="planos">
+                <option value="intersecciones">
+                <option value="estaciones">
+                <option value="informes">
+                <option value="documentos">
+                <option value="escenarios">
+                <option value="horas">
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Meta Total (Cantidad) *</label>
+              <input type="number" id="subtask-meta" class="form-input" step="any" min="0" placeholder="100 si es %" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ejecutado (Cantidad) *</label>
+              <input type="number" id="subtask-done" class="form-input" step="any" min="0" placeholder="0" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Peso en la Tarea (%) *</label>
+              <input type="number" id="subtask-weight" class="form-input" step="any" min="1" max="100" placeholder="Ej: 50" required>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.5rem;">
+            <button type="submit" class="btn btn-primary btn-sm">Guardar Subtarea</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Current Subtasks List -->
+      <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #1e293b;">Subtareas Actuales en esta Tarea</h4>
+      <div id="modal-subtasks-list">
+        <!-- Rendered list of subtasks -->
+      </div>
+
+      <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 1rem;">
+        <span style="font-size: 0.82rem; color: var(--text-muted);" id="modal-total-weight-info">Peso acumulado: 0%</span>
+        <button class="btn btn-dark btn-sm" onclick="closeSubtaskModal()">Listo / Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: NUEVA / EDITAR INCIDENCIA          -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="incident-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="incident-modal-title">Registrar Inconveniente / Incidencia</h3>
+        <button class="modal-close" onclick="closeIncidentModal()">&times;</button>
+      </div>
+      <form id="incident-form" onsubmit="handleSaveIncident(event)">
+        <input type="hidden" id="incident-edit-id">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Fecha de Identificación *</label>
+            <input type="date" id="inc-date" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Área Afectada *</label>
+            <select id="inc-area" class="form-select" onchange="updateIncidentTaskOptions()" required>
+              <option value="transito">Ingeniería de Tránsito</option>
+              <option value="its">Ingeniería de ITS</option>
+              <option value="microsimulacion">Microsimulación de Tránsito</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Tarea Relacionada</label>
+            <select id="inc-task" class="form-select">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nivel de Gravedad *</label>
+            <select id="inc-severity" class="form-select" required>
+              <option value="Crítica">🚨 Crítica (Afecta ruta crítica o fecha final)</option>
+              <option value="Alta">⚠️ Alta (Riesgo de retraso significativo)</option>
+              <option value="Media" selected>🟡 Media (Inconsistencia técnica / Consulta)</option>
+              <option value="Baja">🔵 Baja (Detalle menor / Preventivo)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Descripción detallada del problema o inconveniente *</label>
+          <textarea id="inc-desc" class="form-textarea" rows="3" placeholder="Describe claramente el inconveniente, observaciones en planos, demoras en insumos, etc." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Acciones tomadas / Requerimiento al Encargado *</label>
+          <textarea id="inc-actions" class="form-textarea" rows="2" placeholder="Qué se ha hecho y qué apoyo o decisión se solicita al encargado..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">¿Encargado Informado? *</label>
+            <select id="inc-informed" class="form-select" required>
+              <option value="Sí">✅ Sí (Comunicado formalmente)</option>
+              <option value="Sí (Informe ejecutivo)">📄 Sí (En informe ejecutivo inicial)</option>
+              <option value="Notificado por reunión">🗣️ Notificado en reunión de trabajo</option>
+              <option value="Pendiente de notificación">⏳ Pendiente de notificación</option>
+              <option value="No">❌ No informado aún</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Estado de la Incidencia *</label>
+            <select id="inc-status" class="form-select" required>
+              <option value="Abierta" selected>🔴 Abierta</option>
+              <option value="En análisis">🟡 En análisis / En proceso</option>
+              <option value="Resuelta">🟢 Resuelta / Cerrada</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1rem;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="closeIncidentModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary btn-sm">Guardar Incidencia</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL: GITHUB SYNC & ACCESS TOKEN         -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="github-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">🚀 Publicación Automática en GitHub Pages</h3>
+        <button class="modal-close" onclick="closeGitHubModal()">&times;</button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #475569; margin-bottom: 1.25rem;">
+        Esta función realiza un <code>commit</code> directo del archivo <code>data.json</code> en tu repositorio de GitHub usando la API oficial, actualizando tu web en GitHub Pages al instante.
+      </p>
+
+      <form id="github-sync-form" onsubmit="handleGitHubPublish(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Usuario u Organización de GitHub *</label>
+            <input type="text" id="gh-owner" class="form-input" placeholder="Ej: DarylCandia" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nombre del Repositorio *</label>
+            <input type="text" id="gh-repo" class="form-input" placeholder="Ej: dashboard-transito" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Rama (Branch) *</label>
+            <input type="text" id="gh-branch" class="form-input" value="main" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ruta del archivo en el repo</label>
+            <input type="text" id="gh-path" class="form-input" value="data.json" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">GitHub Personal Access Token (PAT) *</label>
+          <input type="password" id="gh-token" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxx" required>
+          <span style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; display: block;">
+            🔒 Se guarda únicamente en tu navegador (localStorage). Revisa el archivo <code>GUIA_GITHUB_PAGES_Y_TOKEN.md</code> para ver cómo crearlo en 1 minuto.
+          </span>
+        </div>
+
+        <div id="gh-sync-status" style="margin-top: 0.5rem; font-size: 0.85rem; display:none;"></div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.25rem;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="closeGitHubModal()">Cerrar</button>
+          <button type="submit" class="btn btn-success btn-sm" id="gh-publish-btn">
+            🚀 Publicar Ahora a GitHub
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toast">
+    <span id="toast-icon">✅</span>
+    <span id="toast-message">Notificación</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
