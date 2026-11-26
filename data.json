@@ -5,7 +5,7 @@
     "cargo": "Ingeniero Civil - CIP N° 352085 | Modelador Senior de Tráfico y Peatones | Ingeniero de ITS",
     "fechaInicioGeneral": "2026-11-16",
     "fechaFinGeneral": "2027-01-26",
-    "ultimaActualizacion": "2026-11-26T00:09:34.881Z"
+    "ultimaActualizacion": "2026-11-26T17:08:22.140Z"
   },
   "areas": [
     {
@@ -169,9 +169,9 @@
               "descripcion": "Reubicación de cajas de paso y canalización",
               "unidad": "intersecciones",
               "meta": 19,
-              "ejecutado": 5,
+              "ejecutado": 19,
               "peso": 50,
-              "porcentaje": 26.3
+              "porcentaje": 100
             }
           ]
         },
@@ -286,7 +286,68 @@
           "fechaFin": "2026-12-24",
           "pesoEnArea": 25,
           "porcentajeManual": 0,
-          "subtareas": []
+          "subtareas": [
+            {
+              "id": "2.2.1",
+              "nombre": "Informe Técnico de Dimensionamiento, Tecnología y Ubicación de Sensores de Aforo Vehicular",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 15,
+              "porcentaje": 0
+            },
+            {
+              "id": "2.2.2",
+              "nombre": "Informe Técnico de Ubicación y Tipología de Radares",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 15,
+              "porcentaje": 0
+            },
+            {
+              "id": "2.2.3",
+              "nombre": "Informe Técnico de Definición, Tipología y Ubicación de PMV en vía",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 15,
+              "porcentaje": 0
+            },
+            {
+              "id": "2.2.4",
+              "nombre": "Informe Técnico de Cobertura y Ubicación de Cámaras para Detección Automática de Incidentes y Congestión",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 15,
+              "porcentaje": 0
+            },
+            {
+              "id": "2.2.5",
+              "nombre": "Informe Técnico de Dimensionamiento y Ubicación de Gabinetes y Controladores Semafóricos",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 15,
+              "porcentaje": 0
+            },
+            {
+              "id": "2.2.6",
+              "nombre": "Informe Técnico de Dimensionamiento, Formato y Ubicación de Pantallas Informativas al Usuario (PIS)",
+              "descripcion": "",
+              "unidad": "informes",
+              "meta": 1,
+              "ejecutado": 0,
+              "peso": 25,
+              "porcentaje": 0
+            }
+          ]
         },
         {
           "id": "2.3",
@@ -430,6 +491,16 @@
     }
   ],
   "historial": [
+    {
+      "fecha": "2026-11-26",
+      "hora": "12:08",
+      "resumen": "Avance parcial 26-11-2026",
+      "avancesPorArea": {
+        "transito": 71,
+        "its": 0,
+        "microsimulacion": 0
+      }
+    },
     {
       "fecha": "2026-11-25",
       "hora": "17:30",
