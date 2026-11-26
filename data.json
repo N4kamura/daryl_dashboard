@@ -5,7 +5,7 @@
     "cargo": "Ingeniero Civil - CIP N° 352085 | Modelador Senior de Tráfico y Peatones | Ingeniero de ITS",
     "fechaInicioGeneral": "2026-11-16",
     "fechaFinGeneral": "2027-01-26",
-    "ultimaActualizacion": "2026-11-25T23:59:33.713Z"
+    "ultimaActualizacion": "2026-11-26T00:09:34.881Z"
   },
   "areas": [
     {
@@ -93,21 +93,21 @@
               "id": "1.3.1",
               "nombre": "Consolidación de matrices de giro",
               "descripcion": "Revisión de consistencia horaria en horas punta",
-              "unidad": "estaciones",
-              "meta": 10,
-              "ejecutado": 8,
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
               "peso": 70,
-              "porcentaje": 80
+              "porcentaje": 100
             },
             {
               "id": "1.3.2",
-              "nombre": "Verificación de factores de hora pico (FHP)",
-              "descripcion": "Cálculo de flujos equivalentes",
-              "unidad": "%",
-              "meta": 100,
-              "ejecutado": 80,
+              "nombre": "Cálculos de flujos por intersección",
+              "descripcion": "Cálculo de flujos equivalentes (UCP) por intersección",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
               "peso": 30,
-              "porcentaje": 80
+              "porcentaje": 100
             }
           ]
         },
@@ -120,7 +120,28 @@
           "fechaFin": "2026-11-26",
           "pesoEnArea": 10,
           "porcentajeManual": 70,
-          "subtareas": []
+          "subtareas": [
+            {
+              "id": "1.4.1",
+              "nombre": "Superposición de interferencias",
+              "descripcion": "Superposición de equipamiento semafórico con interferencias",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 80,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.4.2",
+              "nombre": "Planos de cortes de interferencias",
+              "descripcion": "Creación de cortes de interferencias para la canalización y cajas de paso",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 20,
+              "porcentaje": 0
+            }
+          ]
         },
         {
           "id": "1.5",
@@ -131,7 +152,28 @@
           "fechaFin": "2026-11-26",
           "pesoEnArea": 10,
           "porcentajeManual": 50,
-          "subtareas": []
+          "subtareas": [
+            {
+              "id": "1.5.1",
+              "nombre": "Reubicación de equipamiento semáforico",
+              "descripcion": "Reubicación de semáforos y gabinetes",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 50,
+              "porcentaje": 100
+            },
+            {
+              "id": "1.5.2",
+              "nombre": "Reubicación de cajas de paso y canalización",
+              "descripcion": "Reubicación de cajas de paso y canalización",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 5,
+              "peso": 50,
+              "porcentaje": 26.3
+            }
+          ]
         },
         {
           "id": "1.6",
@@ -148,17 +190,17 @@
               "nombre": "Cálculo de despejes y verdes peatonales",
               "descripcion": "Norma NEMA y manual de semaforización",
               "unidad": "intersecciones",
-              "meta": 15,
+              "meta": 19,
               "ejecutado": 0,
-              "peso": 30,
+              "peso": 10,
               "porcentaje": 0
             },
             {
               "id": "1.6.2",
-              "nombre": "Lógica de prioridad para transporte público (BRT)",
-              "descripcion": "Fases y ventanas de prioridad",
-              "unidad": "%",
-              "meta": 100,
+              "nombre": "Cálculo de tiempos de verde vehiculares",
+              "descripcion": "Cálculo de verdes vehiculares por fases NEMA",
+              "unidad": "intersecciones",
+              "meta": 19,
               "ejecutado": 0,
               "peso": 35,
               "porcentaje": 0
@@ -166,12 +208,52 @@
             {
               "id": "1.6.3",
               "nombre": "Programación de lógica actuada NEMA",
-              "descripcion": "Estructura de anillos y barreras para controladores",
-              "unidad": "%",
-              "meta": 100,
+              "descripcion": "Programación de extensiones",
+              "unidad": "intersecciones",
+              "meta": 19,
               "ejecutado": 0,
-              "peso": 35,
+              "peso": 5,
               "porcentaje": 0
+            },
+            {
+              "id": "1.6.4",
+              "nombre": "Programación de prioridad de transporte público",
+              "descripcion": "",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 10,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.5",
+              "nombre": "Creación de Timing Sheets",
+              "descripcion": "",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 20,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.6",
+              "nombre": "Planos de canales eléctricos semafóricos NEMA",
+              "descripcion": "",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 0,
+              "peso": 10,
+              "porcentaje": 0
+            },
+            {
+              "id": "1.6.7",
+              "nombre": "Conversión de conteos por movimientos a movimientos NEMA",
+              "descripcion": "",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 19,
+              "peso": 10,
+              "porcentaje": 100
             }
           ]
         }
