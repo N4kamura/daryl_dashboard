@@ -5,7 +5,7 @@
     "cargo": "Ingeniero Civil - CIP N° 352085 | Modelador Senior de Tráfico y Peatones | Ingeniero de ITS",
     "fechaInicioGeneral": "2026-11-16",
     "fechaFinGeneral": "2027-01-26",
-    "ultimaActualizacion": "2026-11-26T17:08:22.140Z"
+    "ultimaActualizacion": "2026-11-26T23:09:28.272Z"
   },
   "areas": [
     {
@@ -160,7 +160,7 @@
               "unidad": "intersecciones",
               "meta": 19,
               "ejecutado": 19,
-              "peso": 50,
+              "peso": 40,
               "porcentaje": 100
             },
             {
@@ -170,8 +170,18 @@
               "unidad": "intersecciones",
               "meta": 19,
               "ejecutado": 19,
-              "peso": 50,
+              "peso": 40,
               "porcentaje": 100
+            },
+            {
+              "id": "1.5.3",
+              "nombre": "Generación de planos semafóricos finales",
+              "descripcion": "",
+              "unidad": "intersecciones",
+              "meta": 19,
+              "ejecutado": 14,
+              "peso": 20,
+              "porcentaje": 73.7
             }
           ]
         },
@@ -201,9 +211,9 @@
               "descripcion": "Cálculo de verdes vehiculares por fases NEMA",
               "unidad": "intersecciones",
               "meta": 19,
-              "ejecutado": 0,
+              "ejecutado": 2,
               "peso": 35,
-              "porcentaje": 0
+              "porcentaje": 10.5
             },
             {
               "id": "1.6.3",
@@ -241,9 +251,9 @@
               "descripcion": "",
               "unidad": "intersecciones",
               "meta": 19,
-              "ejecutado": 0,
+              "ejecutado": 15,
               "peso": 10,
-              "porcentaje": 0
+              "porcentaje": 78.9
             },
             {
               "id": "1.6.7",
@@ -451,6 +461,20 @@
   ],
   "incidencias": [
     {
+      "id": "INC-004",
+      "fecha": "2026-11-26",
+      "areaId": "transito",
+      "areaNombre": "Ingeniería de Tránsito",
+      "tareaId": "1.4",
+      "tareaNombre": "Superposición de interferencias",
+      "gravedad": "Alta",
+      "descripcion": "Se necesita información de las profundidades de las interferencias.",
+      "acciones": "Se comunicó al Ing. Jean Pierre y el día 26/11/2026 entregó la información. 3 servicios públicos aún no poseen información según indica Jean Pierre.",
+      "estado": "Resuelta",
+      "encargadoInformado": "Notificado por reunión",
+      "personasInformadas": "Jean, Alicia"
+    },
+    {
       "id": "INC-001",
       "fecha": "2026-11-25",
       "areaId": "microsimulacion",
@@ -491,6 +515,16 @@
     }
   ],
   "historial": [
+    {
+      "fecha": "2026-11-26",
+      "hora": "18:09",
+      "resumen": "Avance 26-11-2026",
+      "avancesPorArea": {
+        "transito": 74,
+        "its": 0,
+        "microsimulacion": 0
+      }
+    },
     {
       "fecha": "2026-11-26",
       "hora": "12:08",
